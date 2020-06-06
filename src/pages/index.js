@@ -37,8 +37,9 @@ class Index extends Component {
     }
 
     componentDidMount() {
-        const config = this.props;
-        const mapStart = config.chapters[0].location;
+        const config = this.props
+        const chapters = config.chapters
+        const mapStart = chapters[0].location
 
         mapboxgl.accessToken = process.env.GATSBY_MAPBOX_KEY
 
@@ -84,19 +85,19 @@ class Index extends Component {
                 progress: true
             })
             .onStepEnter(response => {
-                const chapter = config.chapters.find(chap => chap.id === response.element.id);
+                const chapter = chapters.find(chap => chap.id === response.element.id);
                 setState({currentChapter:chapter});
                 map.flyTo(chapter.location);
                 if (config.showMarkers) {
                     marker.setLngLat(chapter.location.center);
                 }
-                if (chapter.onChapterEnter.length > 0) {
+                if (chapter.onChapterEnter) {
                     chapter.onChapterEnter.forEach(setLayerOpacity);
                 }
             })
             .onStepExit(response => {
-                var chapter = config.chapters.find(chap => chap.id === response.element.id);
-                if (chapter.onChapterExit.length > 0) {
+                var chapter = chapters.find(chap => chap.id === response.element.id);
+                if (chapter.onChapterExit) {
                     chapter.onChapterExit.forEach(setLayerOpacity);
                 }
             });
@@ -106,7 +107,8 @@ class Index extends Component {
     }
 
     render() {
-        const config = this.props;
+        const config = this.props
+        const chapters = config.chapters
         const theme = config.theme;
         const currentChapterID = this.state.currentChapter.id;
         return (
@@ -126,7 +128,7 @@ class Index extends Component {
                     }
                     <div id="features" className={alignments[config.alignment]}>
                         {
-                            config.chapters.map(chapter =>
+                            chapters.map(chapter =>
                                 <Chapter key={chapter.id} theme={theme} {...chapter} currentChapterID={currentChapterID}/>
                             )
                         }
@@ -162,10 +164,49 @@ function Chapter({id, theme, title, image, description, currentChapterID}) {
     )
 }
 
-const IndexPage = () => {
+const IndexPage = ({data}) => {
+  config.chapters = []
+  data.allAirtable.nodes.forEach(record => {
+    const chapter = {
+      'id': record.data.id,
+      'title': record.data.title,
+      'image': record.data.image,
+      'description': record.data.description,
+      'location': {
+        'center': [record.data.latitude, record.data.longitude],
+        'zoom': record.data.zoom,
+        'pitch': record.data.pitch,
+        'bearing': record.data.bearing
+      },
+      'onChapterEnter': record.data.onChapterEnter ? record.data.onChapterEnter : [],
+      'onChapterExit': record.data.onChapterExit ? record.data.onChapterExit : []
+    }
+    config.chapters.push(chapter)
+  })
+
   return (
     <Index {...config}/>
   )
 }
 
 export default IndexPage
+
+export const query = graphql`
+  query ConfigQuery {
+    allAirtable(sort: {fields: id, order: DESC}) {
+      nodes {
+        data {
+          id
+          description
+          title
+          image
+          latitude
+          longitude
+          pitch
+          bearing
+          zoom
+        }
+      }
+    }
+  }
+`
