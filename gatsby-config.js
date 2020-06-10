@@ -2,7 +2,7 @@ require('dotenv').config({path: `.env`})
 
 module.exports = {
   siteMetadata: {
-    title: `Protest Timeline`,
+    title: `Trump Tower Protest Timeline`,
     description: ``,
     author: `@beamalsky`,
   },
@@ -26,7 +26,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.jpg`, // This path is relative to the root of the site.
       },
     },
     {
@@ -41,6 +41,7 @@ module.exports = {
           }
         ]
       }
-    }
+    },
+    `gatsby-plugin-styled-components`
   ],
 }

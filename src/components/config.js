@@ -1,13 +1,11 @@
-import { graphql } from "gatsby"
-
 var config = {
     style: 'mapbox://styles/mapbox/streets-v11',
     showMarkers: true,
     theme: 'light',
     alignment: 'left',
-    title: 'Trump Tower Protest Timeline',
-    subtitle: 'A descriptive and interesting subtitle to draw in the reader',
-    byline: 'By X, Y, and Z',
+    title: 'What Happened May 30?',
+    subtitle: 'A document of escalating conflict in downtown Chicago',
+    byline: 'By Martha Bayne and Jason Schumer',
     footer: 'Source: source citations, etc.'
 };
 
