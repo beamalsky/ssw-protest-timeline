@@ -40,7 +40,10 @@ module.exports = {
           {
             baseId: `${process.env.GATSBY_BASE_ID}`,
             tableName: 'Trump Tower website backend',
-            mapping: {'image':'fileNode'}
+            mapping: {
+              'full_width_image' : 'fileNode',
+              'image' : 'fileNode'
+            }
           }
         ]
       }
