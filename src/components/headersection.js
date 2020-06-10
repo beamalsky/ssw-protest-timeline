@@ -2,7 +2,7 @@ import React from 'react'
 import { StaticQuery, graphql } from "gatsby"
 import { Col, Row } from 'react-bootstrap'
 
-import BackgroundImage from '../components/backgroundimage'
+import Hero from '../components/hero'
 import config from '../components/config.js'
 
 const HeaderSection = () => (
@@ -22,15 +22,13 @@ const HeaderSection = () => (
     }
     render={data => (
       <>
-        <BackgroundImage
-          title="header"
+        <Hero
           fluid={data.header.childImageSharp.fluid}
-          overlayColor="#04040454"
         >
           <div style={{
             margin: '33vh auto',
             width: '66vw',
-            padding: '2vh',
+            padding: '4vh',
             textAlign: 'center',
             backgroundColor: 'black'
           }}>
@@ -39,7 +37,7 @@ const HeaderSection = () => (
               <p class='byline'>{config.byline}</p>
               <p class='subbyline'>Cover image by Anthony Nguyen<br />Web interactive by Bea Malsky</p>
           </div>
-        </BackgroundImage>
+        </Hero>
         <div id="intro" style={{
           backgroundColor: 'white',
           padding: '2rem',
