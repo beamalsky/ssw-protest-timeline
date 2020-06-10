@@ -1,5 +1,7 @@
 # SSW Protest Timeline
 
+A document of escalating conflict in downtown Chicago. Built using Mapbox's [Storytelling template](https://github.com/mapbox/storytelling) and ported to Gatsby. Pulls chapters from an Airtable backend.
+
 ### 💾 Requirements
 
 - [Docker](https://docs.docker.com/install/)
@@ -16,12 +18,12 @@
 
 2. You'll need your own Mapbox token for local development and an Airtable spreadsheet. Sign up for [Mapbox](https://account.mapbox.com/), create an access token, and then create a `.env` file at the root of this directory with the following:
 
-  ```
-  GATSBY_MAPBOX_KEY=''
-  GATSBY_AIRTABLE_KEY=''
-  GATSBY_BASE_ID=''
+    ```
+    GATSBY_MAPBOX_KEY=''
+    GATSBY_AIRTABLE_KEY=''
+    GATSBY_BASE_ID=''
 
-  ```
+    ```
 
 2. Install dependencies:
 
