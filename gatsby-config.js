@@ -2,7 +2,7 @@ require('dotenv').config({path: `.env`})
 
 module.exports = {
   siteMetadata: {
-    title: `Protest Timeline`,
+    title: `Trump Tower Protest Timeline`,
     description: ``,
     author: `@beamalsky`,
   },
@@ -41,6 +41,7 @@ module.exports = {
           }
         ]
       }
-    }
+    },
+    `gatsby-plugin-styled-components`
   ],
 }
