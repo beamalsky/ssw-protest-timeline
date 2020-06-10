@@ -41,7 +41,7 @@ const HeaderSection = () => (
         <div id="intro" style={{
           backgroundColor: 'white',
           padding: '2rem',
-          opacity: '87%'
+          opacity: '93%'
         }}>
           <Row>
             <Col className="main-text-column" xs={12} md={7}>

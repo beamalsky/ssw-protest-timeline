@@ -113,8 +113,7 @@ class Index extends Component {
 
     render() {
       const config = this.props
-      const chapters1 = config.chapters.filter(d => d.section === 1)
-      const chapters2 = config.chapters.filter(d => d.section === 2)
+      const chapters = config.chapters
       const theme = config.theme
       const currentChapterID = this.state.currentChapter.id
       return (
@@ -122,23 +121,11 @@ class Index extends Component {
           <div ref={el => this.mapContainer = el} className="absolute top right left bottom" />
           <HeaderSection />
           <div id="story">
-            <div id="features" className={alignments[config.alignment]}>
               {
-                chapters1.map(chapter =>
+                chapters.map(chapter =>
                   <Chapter key={chapter.id} theme={theme} {...chapter} currentChapterID={currentChapterID}/>
                 )
               }
-            </div>
-            <Img
-              fluid={config.fullWidthImage1}
-            />
-            <div id="features" className={alignments[config.alignment]}>
-              {
-                chapters2.map(chapter =>
-                  <Chapter key={chapter.id} theme={theme} {...chapter} currentChapterID={currentChapterID}/>
-                )
-              }
-            </div>
           </div>
           <div id="story">
             {config.footer &&
@@ -154,21 +141,31 @@ class Index extends Component {
 
 function Chapter({id, theme, title, image, description, currentChapterID}) {
     const classList = id === currentChapterID ? "step active" : "step";
-    return (
-        <div id={id} className={classList}>
-            <div className={theme}>
-                  { image &&
-                      <img src={image} alt={title}></img>
+    if (image) {
+      return (
+        <Img
+          fluid={image.localFiles[0].childImageSharp.fluid}
+        />
+      )
+    } else {
+      return (
+        <div id="features" className={alignments[config.alignment]}>
+          <div id={id} className={classList}>
+              <div className={theme}>
+                    { image &&
+                        <img src={image} alt={title}></img>
+                    }
+                  { title &&
+                      <h3 className="title">{title}</h3>
                   }
-                { title &&
-                    <h3 className="title">{title}</h3>
-                }
-                { description &&
-                    <p>{description}</p>
-                }
-            </div>
+                  { description &&
+                      <p>{description}</p>
+                  }
+              </div>
+          </div>
         </div>
-    )
+      )
+    }
 }
 
 const IndexPage = ({data}) => {
@@ -192,8 +189,6 @@ const IndexPage = ({data}) => {
     config.chapters.push(chapter)
   })
 
-  config.fullWidthImage1 = data.fullWidthImage1.childImageSharp.fluid
-
   return (
     <>
       <SEO title={config.title} />
@@ -206,28 +201,37 @@ export default IndexPage
 
 export const query = graphql`
   query ConfigQuery {
-    allAirtable(
-      sort: {fields: id, order: DESC}
-    ) {
+    allAirtable(sort: {fields: data___id, order: ASC}) {
       nodes {
         data {
           id
-          section
           description
           title
-          image
+          image {
+            localFiles {
+              childImageSharp {
+                fluid(maxWidth: 2000) {
+                  src
+                  tracedSVG
+                  srcWebp
+                  srcSetWebp
+                  srcSet
+                  sizes
+                  presentationWidth
+                  presentationHeight
+                  originalName
+                  originalImg
+                  base64
+                  aspectRatio
+                }
+              }
+            }
+          }
           latitude
           longitude
           pitch
           bearing
           zoom
-        }
-      }
-    }
-    fullWidthImage1: file(relativePath: { eq: "anthony_nguyen_1.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid
         }
       }
     }
