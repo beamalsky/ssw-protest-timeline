@@ -1,6 +1,6 @@
 # SSW Protest Timeline
 
-A document of escalating conflict in downtown Chicago. Built using Mapbox's [Storytelling template](https://github.com/mapbox/storytelling) and ported to Gatsby. Pulls chapters from an Airtable backend.
+Built using Mapbox's [Storytelling template](https://github.com/mapbox/storytelling) and ported to Gatsby. Pulls chapters from an Airtable backend.
 
 ### 💾 Requirements
 
