@@ -162,7 +162,12 @@ function Chapter({id, theme, full_width_image, title, image, description, media_
                       <h3 className="dek">{title}</h3>
                   }
                   { description &&
-                      <p>{description}</p>
+                      <div
+                        dangerouslySetInnerHTML={{ __html: description }}
+                        style={{
+                          padding: '0'
+                        }}
+                      />
                   }
                   {
                     media_embed &&
@@ -188,7 +193,7 @@ const IndexPage = ({data}) => {
       'full_width_image': record.data.full_width_image,
       'title': record.data.title,
       'image': record.data.image,
-      'description': record.data.description,
+      'description': record.data.description ? record.data.description.childMarkdownRemark.html : null,
       'media_embed': record.data.media_embed,
       'location': {
         'center': [record.data.longitude, record.data.latitude],
@@ -202,7 +207,6 @@ const IndexPage = ({data}) => {
     config.chapters.push(chapter)
   })
 
-  console.log(config)
   return (
     <>
       <SEO title={config.title} />
@@ -260,7 +264,11 @@ export const query = graphql`
               }
             }
           }
-          description
+          description {
+            childMarkdownRemark {
+              html
+            }
+          }
           media_embed
           latitude
           longitude
