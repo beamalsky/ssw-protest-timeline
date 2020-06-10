@@ -142,11 +142,9 @@ class Index extends Component {
 function Chapter({id, theme, title, image, description, currentChapterID}) {
     const classList = id === currentChapterID ? "step active" : "step";
     if (image) {
-      console.log("Image found!")
-      console.log(image)
       return (
         <Img
-          fluid={config.fullWidthImage1}
+          fluid={image.localFiles[0].childImageSharp.fluid}
         />
       )
     } else {
@@ -191,10 +189,6 @@ const IndexPage = ({data}) => {
     config.chapters.push(chapter)
   })
 
-  console.log(config)
-
-  config.fullWidthImage1 = data.fullWidthImage1.childImageSharp.fluid
-
   return (
     <>
       <SEO title={config.title} />
@@ -207,28 +201,37 @@ export default IndexPage
 
 export const query = graphql`
   query ConfigQuery {
-    allAirtable(
-      sort: {fields: data___id, order: ASC}
-    ) {
+    allAirtable(sort: {fields: data___id, order: ASC}) {
       nodes {
         data {
           id
-          section
           description
           title
-          image
+          image {
+            localFiles {
+              childImageSharp {
+                fluid(maxWidth: 2000) {
+                  src
+                  tracedSVG
+                  srcWebp
+                  srcSetWebp
+                  srcSet
+                  sizes
+                  presentationWidth
+                  presentationHeight
+                  originalName
+                  originalImg
+                  base64
+                  aspectRatio
+                }
+              }
+            }
+          }
           latitude
           longitude
           pitch
           bearing
           zoom
-        }
-      }
-    }
-    fullWidthImage1: file(relativePath: { eq: "anthony_nguyen_1.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid
         }
       }
     }
