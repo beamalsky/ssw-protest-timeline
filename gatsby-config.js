@@ -42,12 +42,14 @@ module.exports = {
             tableName: 'Trump Tower website backend',
             mapping: {
               'full_width_image' : 'fileNode',
-              'image' : 'fileNode'
+              'image' : 'fileNode',
+              'description': 'text/markdown'
             }
           }
         ]
       }
     },
-    `gatsby-plugin-twitter`
+    `gatsby-plugin-twitter`,
+    `gatsby-transformer-remark`
   ],
 }
