@@ -139,7 +139,7 @@ class Index extends Component {
     }
 }
 
-function Chapter({id, theme, full_width_image, title, video_link, image, description, currentChapterID}) {
+function Chapter({id, theme, full_width_image, title, image, description, media_embed, currentChapterID}) {
     const classList = id === currentChapterID ? "step active" : "step";
     if (full_width_image) {
       return (
@@ -159,10 +159,19 @@ function Chapter({id, theme, full_width_image, title, video_link, image, descrip
                       />
                     }
                   { title &&
-                      <h3 className="title">{title}</h3>
+                      <h3 className="dek">{title}</h3>
                   }
                   { description &&
                       <p>{description}</p>
+                  }
+                  {
+                    media_embed &&
+                    <div
+                      dangerouslySetInnerHTML={{ __html: media_embed }}
+                      style={{
+                        padding: '0'
+                      }}
+                    />
                   }
               </div>
           </div>
@@ -178,11 +187,11 @@ const IndexPage = ({data}) => {
       'id': `chapter-${record.data.id}`,
       'full_width_image': record.data.full_width_image,
       'title': record.data.title,
-      'video_link': record.data.video_link,
       'image': record.data.image,
       'description': record.data.description,
+      'media_embed': record.data.media_embed,
       'location': {
-        'center': [record.data.latitude, record.data.longitude],
+        'center': [record.data.longitude, record.data.latitude],
         'zoom': record.data.zoom,
         'pitch': record.data.pitch,
         'bearing': record.data.bearing
@@ -193,6 +202,7 @@ const IndexPage = ({data}) => {
     config.chapters.push(chapter)
   })
 
+  console.log(config)
   return (
     <>
       <SEO title={config.title} />
@@ -230,7 +240,6 @@ export const query = graphql`
             }
           }
           title
-          video_link
           image {
             localFiles {
               childImageSharp {
@@ -252,6 +261,7 @@ export const query = graphql`
             }
           }
           description
+          media_embed
           latitude
           longitude
           pitch
