@@ -2,9 +2,11 @@ require('dotenv').config({path: `.env`})
 
 module.exports = {
   siteMetadata: {
-    title: `Trump Tower Protest Timeline`,
-    description: ``,
-    author: `@beamalsky`,
+    title: `What Happened on May 30?`,
+    description: `A document of escalating conflict in downtown Chicago`,
+    twitterUsername: `@southsideweekly`,
+    url: "https://ssw-protest-timeline.netlify.app/", // No trailing slash allowed!
+    image: "/card.jpg"
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -38,7 +40,10 @@ module.exports = {
           {
             baseId: `${process.env.GATSBY_BASE_ID}`,
             tableName: 'Trump Tower website backend',
-            mapping: {'image':'fileNode'}
+            mapping: {
+              'full_width_image' : 'fileNode',
+              'image' : 'fileNode'
+            }
           }
         ]
       }

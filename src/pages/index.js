@@ -139,12 +139,12 @@ class Index extends Component {
     }
 }
 
-function Chapter({id, theme, title, image, description, currentChapterID}) {
+function Chapter({id, theme, full_width_image, title, video_link, image, description, currentChapterID}) {
     const classList = id === currentChapterID ? "step active" : "step";
-    if (image) {
+    if (full_width_image) {
       return (
         <Img
-          fluid={image.localFiles[0].childImageSharp.fluid}
+          fluid={full_width_image.localFiles[0].childImageSharp.fluid}
         />
       )
     } else {
@@ -153,7 +153,10 @@ function Chapter({id, theme, title, image, description, currentChapterID}) {
           <div id={id} className={classList}>
               <div className={theme}>
                     { image &&
-                        <img src={image} alt={title}></img>
+                      <Img
+                        fluid={image.localFiles[0].childImageSharp.fluid}
+                        className="mb-3"
+                      />
                     }
                   { title &&
                       <h3 className="title">{title}</h3>
@@ -173,8 +176,9 @@ const IndexPage = ({data}) => {
   data.allAirtable.nodes.forEach(record => {
     const chapter = {
       'id': `chapter-${record.data.id}`,
-      'section': record.data.section,
+      'full_width_image': record.data.full_width_image,
       'title': record.data.title,
+      'video_link': record.data.video_link,
       'image': record.data.image,
       'description': record.data.description,
       'location': {
@@ -205,9 +209,7 @@ export const query = graphql`
       nodes {
         data {
           id
-          description
-          title
-          image {
+          full_width_image {
             localFiles {
               childImageSharp {
                 fluid(maxWidth: 2000) {
@@ -227,6 +229,29 @@ export const query = graphql`
               }
             }
           }
+          title
+          video_link
+          image {
+            localFiles {
+              childImageSharp {
+                fluid(maxWidth: 800) {
+                  src
+                  tracedSVG
+                  srcWebp
+                  srcSetWebp
+                  srcSet
+                  sizes
+                  presentationWidth
+                  presentationHeight
+                  originalName
+                  originalImg
+                  base64
+                  aspectRatio
+                }
+              }
+            }
+          }
+          description
           latitude
           longitude
           pitch
