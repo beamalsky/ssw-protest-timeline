@@ -43,7 +43,7 @@ const HeaderSection = () => (
               <h1 style={{color: 'white'}}>{config.title}</h1>
               <h3 className="dek">{config.subtitle}</h3>
               <p className='byline'>{config.byline}</p>
-              <p className='subbyline'>Cover image by Anthony Nguyen<br />Web interactive by Bea Malsky</p>
+              <p className='subbyline'>Cover photos by Anthony Nguyen<br />Web interactive by Bea Malsky</p>
           </div>
         </Hero>
         <div id="intro" style={{
