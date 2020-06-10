@@ -159,7 +159,7 @@ function Chapter({id, theme, full_width_image, title, image, description, media_
                       />
                     }
                   { title &&
-                      <h3 className="title">{title}</h3>
+                      <h3 className="dek">{title}</h3>
                   }
                   { description &&
                       <p>{description}</p>
