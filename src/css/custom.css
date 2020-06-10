@@ -765,6 +765,28 @@ button {
   font-family: "adobe-caslon-pro", "adobe-caslon-pro", "Georgia", serif;
   margin-bottom: 0.7rem;
 }
+.photo-credit {
+  font-weight: 500;
+  font-style: italic;
+  color: #999;
+  text-align: right;
+  font-size: .7rem;
+  margin-top: .2rem;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+.dropcap {
+  font-weight: 900;
+  display: inline;
+  margin: 0;
+  padding: .3em .08em 0 0;
+  #padding: 0.25em 0.08em 0.2em 0.00em;
+  _padding: 0.25em 0.08em 0.4em 0.00em;
+  line-height: .4em;
+  font-size: 3.2em;
+  text-transform: capitalize;
+  color: #dd2d26;
+  float: left;
+}
 .break {
   margin-bottom: 1.5rem;
   font-weight: boldest;
