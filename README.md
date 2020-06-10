@@ -1,6 +1,4 @@
-# How to Recharts
-
-This is a learning repo connected to [this how-to issue](https://github.com/datamade/how-to/issues/72). It was set up using the [default Gatsby starter repo](https://github.com/gatsbyjs/gatsby-starter-default).
+# SSW Protest Timeline
 
 ### 💾 Requirements
 
@@ -9,17 +7,20 @@ This is a learning repo connected to [this how-to issue](https://github.com/data
 
 ### 🚀 Quick start
 
-1. Grab the repo:
+1. Open your terminal and download the repo:
 
     ```shell
     git clone git@github.com:beamalsky/ssw-protest-timeline.git
     cd ssw-protest-timeline
     ```
 
-2. You'll need your own Mapbox token for local development. Sign up for [Mapbox](https://account.mapbox.com/), create an access token, and then run the following:
+2. You'll need your own Mapbox token for local development and an Airtable spreadsheet. Sign up for [Mapbox](https://account.mapbox.com/), create an access token, and then create a `.env` file at the root of this directory with the following:
 
-  ```shell
-  touch .env && echo 'GATSBY_MAPBOX_KEY=<YOUR MAPBOX KEY HERE>' >> .env
+  ```
+  GATSBY_MAPBOX_KEY=''
+  GATSBY_AIRTABLE_KEY=''
+  GATSBY_BASE_ID=''
+
   ```
 
 2. Install dependencies:
@@ -35,6 +36,12 @@ This is a learning repo connected to [this how-to issue](https://github.com/data
     ```
 
     Your site should now be up and running at `http://localhost:8000`!
+
+4. If you change the content in Airtable and want to see it updated in the site, run:
+
+    ```shell
+    yarn clean && yarn start
+    ```
 
 ### 🤖 What's inside?
 _Taken from `gatsby-starter-default`_
