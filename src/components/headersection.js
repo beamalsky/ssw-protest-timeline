@@ -42,8 +42,8 @@ const HeaderSection = () => (
           }}>
               <h1 style={{color: 'white'}}>{config.title}</h1>
               <h3 className="dek">{config.subtitle}</h3>
-              <p className='byline'>{config.byline}</p>
-              <p className='subbyline'>Cover photos by Anthony Nguyen<br />Web interactive by Bea Malsky</p>
+              <p className='byline'>By Martha Bayne and Jason Schumer<br />Web interactive by Bea Malsky</p>
+              <p className='subbyline'>Cover photos by Anthony Nguyen</p>
           </div>
         </Hero>
         <div id="intro" style={{
@@ -53,6 +53,9 @@ const HeaderSection = () => (
         }}>
           <Row>
             <Col className="main-text-column" xs={12} md={7}>
+              <p>
+                <b>Content Warning: <em>Discussion, images, and videos of police violence.</em></b>
+              </p>
               <p>
                 <span class="dropcap">O</span>n May 30, when the car caravans that started at the Cook County Jail and at Trinity Episcopal Church in Bronzeville met up at 2pm with the rally going on at Federal Plaza, it was clear that this was going to be big. Thousands of people marched through the Loop, up Lake Shore Drive, and down Michigan Avenue that day, in protest of the killing of George Floyd by Minneapolis police officer Derek Chauvin on May 25, and the many killings of Black people by police that preceded it.
               </p>
