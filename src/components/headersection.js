@@ -4,6 +4,7 @@ import { Col, Row } from 'react-bootstrap'
 import Img from "gatsby-image"
 
 import Hero from '../components/hero'
+import SSWNameplateWhite from '../components/sswnameplatewhite'
 import config from '../components/config.js'
 
 const HeaderSection = () => (
@@ -40,6 +41,7 @@ const HeaderSection = () => (
             textAlign: 'center',
             backgroundColor: 'black'
           }}>
+              <SSWNameplateWhite />
               <h1 style={{color: 'white'}}>{config.title}</h1>
               <h3 className="dek">{config.subtitle}</h3>
               <p className='byline'>By Martha Bayne and Jason Schumer<br />Web interactive by Bea Malsky</p>
