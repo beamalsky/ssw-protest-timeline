@@ -50,6 +50,12 @@ module.exports = {
       }
     },
     `gatsby-plugin-twitter`,
-    `gatsby-transformer-remark`
+    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-30162627-4",
+      },
+    },
   ],
 }
