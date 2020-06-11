@@ -68,7 +68,7 @@ const HeaderSection = () => (
               <Img
                 fluid={data.blm.childImageSharp.fluid}
               />
-              <figcaption className="photo-credit mb-3">Photo by Teddy Waffles</figcaption>
+              <figcaption className="photo-credit mb-3">Photo by Teddy Wachholz</figcaption>
               <br />
               <p>
                 <span class="dropcap">W</span>hat happened that Saturday? The Weekly put out a call for first-person accounts from that weekend, with the aim of establishing a coherent timeline of events. Among the more than fifty testimonials we’ve received, the majority focus on a small window of time when an otherwise peaceful protest escalated rapidly into violence, between about 4pm and 7pm on the Wabash bridge and around the Trump International Hotel and Tower, the Wrigley Building, and the intersection of State and Kinzie.

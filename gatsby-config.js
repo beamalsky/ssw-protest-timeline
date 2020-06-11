@@ -6,7 +6,7 @@ module.exports = {
     description: `A document of escalating conflict in downtown Chicago`,
     twitterUsername: `@southsideweekly`,
     url: "https://ssw-protest-timeline.netlify.app/", // No trailing slash allowed!
-    image: "/card.jpg"
+    image: "/card.png"
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
