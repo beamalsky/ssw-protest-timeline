@@ -33,6 +33,14 @@ const transformRequest = (url) => {
     }
 }
 
+const getChapterTransition = (onChapterString) => {
+  const split = onChapterString.split(',')
+  return [{
+    layer: split[0].toString(),
+    opacity: parseFloat(split[1])
+  }]
+}
+
 class Index extends Component {
   constructor(props) {
     super(props);
@@ -60,19 +68,20 @@ class Index extends Component {
 
       const marker = new mapboxgl.Marker();
       if (config.showMarkers) {
-          marker.setLngLat(mapStart.center).addTo(map);
+        marker.setLngLat(mapStart.center).addTo(map);
       }
 
       function getLayerPaintType(layer) {
-          var layerType = map.getLayer(layer).type;
-          return layerTypes[layerType];
+        console.log(layer)
+        var layerType = map.getLayer(layer).type;
+        return layerTypes[layerType];
       }
 
       function setLayerOpacity(layer) {
-          var paintProps = getLayerPaintType(layer.layer);
-          paintProps.forEach(function(prop) {
-              map.setPaintProperty(layer.layer, prop, layer.opacity);
-          });
+        var paintProps = getLayerPaintType(layer.layer);
+        paintProps.forEach(function(prop) {
+            map.setPaintProperty(layer.layer, prop, layer.opacity);
+        });
       }
 
       const setState = this.setState.bind(this);
@@ -82,30 +91,30 @@ class Index extends Component {
 
       map.on('load', function () {
 
-          // setup the instance, pass callback functions
-          scroller
-          .setup({
-              step: '.step',
-              offset: 0.5,
-              progress: true
-          })
-          .onStepEnter(response => {
-              const chapter = chapters.find(chap => chap.id === response.element.id);
-              setState({currentChapter:chapter});
-              map.flyTo(chapter.location);
-              if (config.showMarkers) {
-                  marker.setLngLat(chapter.location.center);
-              }
-              if (chapter.onChapterEnter) {
-                  chapter.onChapterEnter.forEach(setLayerOpacity);
-              }
-          })
-          .onStepExit(response => {
-              var chapter = chapters.find(chap => chap.id === response.element.id);
-              if (chapter.onChapterExit) {
-                  chapter.onChapterExit.forEach(setLayerOpacity);
-              }
-          });
+        // setup the instance, pass callback functions
+        scroller
+        .setup({
+          step: '.step',
+          offset: 0.5,
+          progress: true
+        })
+        .onStepEnter(response => {
+          const chapter = chapters.find(chap => chap.id === response.element.id);
+          setState({currentChapter:chapter});
+          map.flyTo(chapter.location);
+          if (config.showMarkers) {
+            marker.setLngLat(chapter.location.center);
+          }
+          if (chapter.onChapterEnter) {
+            chapter.onChapterEnter.forEach(setLayerOpacity);
+          }
+        })
+        .onStepExit(response => {
+          var chapter = chapters.find(chap => chap.id === response.element.id);
+          if (chapter.onChapterExit) {
+            chapter.onChapterExit.forEach(setLayerOpacity);
+          }
+        });
       });
 
       window.addEventListener('resize', scroller.resize);
@@ -201,8 +210,8 @@ const IndexPage = ({data}) => {
         'pitch': record.data.pitch,
         'bearing': record.data.bearing
       },
-      'onChapterEnter': record.data.onChapterEnter ? record.data.onChapterEnter : [],
-      'onChapterExit': record.data.onChapterExit ? record.data.onChapterExit : []
+      'onChapterEnter': record.data.onChapterEnter ? getChapterTransition(record.data.onChapterEnter) : [],
+      'onChapterExit': record.data.onChapterExit ? getChapterTransition(record.data.onChapterExit) : []
     }
     config.chapters.push(chapter)
   })
@@ -275,6 +284,8 @@ export const query = graphql`
           pitch
           bearing
           zoom
+          onChapterEnter
+          onChapterExit
         }
       }
     }

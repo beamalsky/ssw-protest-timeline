@@ -1,5 +1,5 @@
 var config = {
-    style: 'mapbox://styles/mapbox/dark-v10',
+    style: 'mapbox://styles/apidae/ckba8sfpn01031irr88z2p3pz',
     showMarkers: true,
     theme: 'light',
     alignment: 'left',
