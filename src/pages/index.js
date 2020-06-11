@@ -7,6 +7,7 @@ import Img from "gatsby-image"
 import SEO from '../components/seo'
 import HeaderSection from '../components/headersection'
 import config from '../components/config.js'
+import Footer from '../components/footer'
 import '../css/typekit.css'
 import '../css/custom.css'
 
@@ -136,13 +137,7 @@ class Index extends Component {
                 )
               }
           </div>
-          <div id="story">
-            {config.footer &&
-              <div id="footer" className={theme}>
-                <p>{config.footer}</p>
-              </div>
-            }
-          </div>
+          <Footer />
         </div>
       )
     }
@@ -164,11 +159,11 @@ function Chapter({id, theme, full_width_image, title, image, description, media_
                     { image &&
                       <Img
                         fluid={image.localFiles[0].childImageSharp.fluid}
-                        className="mb-3"
+                        className="mb-5"
                       />
                     }
                   { title &&
-                      <h3 className="dek">{title}</h3>
+                      <h3 className="dek mt-3 mb-3">{title}</h3>
                   }
                   { description &&
                       <div
