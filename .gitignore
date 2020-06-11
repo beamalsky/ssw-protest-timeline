@@ -57,6 +57,7 @@ typings/
 # gatsby files
 .cache/
 public
+mapbox_uploads
 
 # Mac files
 .DS_Store
