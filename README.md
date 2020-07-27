@@ -4,8 +4,8 @@ Built using Mapbox's [Storytelling template](https://github.com/mapbox/storytell
 
 ### 💾 Requirements
 
-- [Docker](https://docs.docker.com/install/)
-- [Docker Compose](https://docs.docker.com/compose/install/)
+- [Yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable)
+- [Gatsby](https://www.gatsbyjs.org/) (install by running `yarn add gatsby-cli`)
 
 ### 🚀 Quick start
 
@@ -22,7 +22,6 @@ Built using Mapbox's [Storytelling template](https://github.com/mapbox/storytell
     GATSBY_MAPBOX_KEY=''
     GATSBY_AIRTABLE_KEY=''
     GATSBY_BASE_ID=''
-
     ```
 
 2. Install dependencies:
