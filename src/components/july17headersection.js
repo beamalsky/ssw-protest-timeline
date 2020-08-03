@@ -6,11 +6,11 @@ import Img from "gatsby-image"
 import Hero from '../components/hero'
 import SSWNameplateWhite from '../components/sswnameplatewhite'
 
-const HeaderSection = ({config}) => (
+const July17HeaderSection = ({config}) => (
   <StaticQuery
     query={
       graphql`
-        query HeaderQuery {
+        query July17HeaderQuery {
           header: file(relativePath: { eq: "header.jpg" }) {
             childImageSharp {
               fluid(maxWidth: 2000) {
@@ -43,8 +43,8 @@ const HeaderSection = ({config}) => (
               <SSWNameplateWhite />
               <h1 style={{color: 'white'}}>{config.title}</h1>
               <h3 className="dek">{config.subtitle}</h3>
-              <p className='byline'>By Martha Bayne and Jason Schumer<br />Web interactive by Bea Malsky</p>
-              <p className='subbyline'>Cover photos by Anthony Nguyen</p>
+              <p className='byline'>By Martha Bayne, Jim Daley, and Jason Schumer<br />Web interactive by Bea Malsky</p>
+              <p className='subbyline'>Cover photos by TK</p>
           </div>
         </Hero>
         <div id="intro" style={{
@@ -102,4 +102,4 @@ const HeaderSection = ({config}) => (
   />
 )
 
-export default HeaderSection
+export default July17HeaderSection

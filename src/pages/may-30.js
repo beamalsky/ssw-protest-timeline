@@ -6,10 +6,18 @@ import Img from "gatsby-image"
 
 import SEO from '../components/seo'
 import HeaderSection from '../components/headersection'
-import config from '../components/config.js'
 import Footer from '../components/footer'
 import '../css/typekit.css'
 import '../css/custom.css'
+
+const config = {
+    style: 'mapbox://styles/apidae/ckba8sfpn01031irr88z2p3pz',
+    showMarkers: true,
+    theme: 'light',
+    alignment: 'left',
+    title: 'What Happened May 30?',
+    subtitle: 'A document of escalating conflict in downtown Chicago'
+}
 
 const layerTypes = {
     'fill': ['fill-opacity'],
@@ -73,7 +81,6 @@ class Index extends Component {
       }
 
       function getLayerPaintType(layer) {
-        console.log(layer)
         var layerType = map.getLayer(layer).type;
         return layerTypes[layerType];
       }
@@ -129,7 +136,9 @@ class Index extends Component {
       return (
         <div>
           <div ref={el => this.mapContainer = el} className="absolute top right left bottom" />
-          <HeaderSection />
+          <HeaderSection
+            config={config}
+          />
           <div id="story">
               {
                 chapters.map(chapter =>

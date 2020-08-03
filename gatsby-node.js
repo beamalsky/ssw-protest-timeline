@@ -12,3 +12,14 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
     })
   }
 }
+
+exports.createPages = ({ actions }) => {
+  const { createRedirect } = actions
+
+  createRedirect({
+    fromPath: `/`,
+    toPath: `/may-30`,
+    redirectInBrowser: true,
+    isPermanent: true,
+  })
+}
