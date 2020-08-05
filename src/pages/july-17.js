@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 
 import SEO from '../components/seo'
 import July17HeaderSection from '../components/july17headersection'
-import Footer from '../components/footer'
+import July17Footer from '../components/july17footer'
 import '../css/typekit.css'
 import '../css/custom.css'
 
@@ -55,7 +55,7 @@ class Index extends Component {
                 )
               }
           </div>
-          <Footer />
+          <July17Footer />
         </div>
       )
     }
