@@ -133,7 +133,12 @@ export default IndexPage
 
 export const query = graphql`
   query July17Query {
-    allAirtable(sort: {fields: data___id, order: ASC}) {
+    allAirtable(
+      sort: {fields: data___id, order: ASC},
+      filter: {
+        table: { eq: "(DON'T TOUCH) July 17th website" }
+      }
+    ) {
       nodes {
         data {
           id

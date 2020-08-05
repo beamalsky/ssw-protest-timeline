@@ -30,7 +30,7 @@ a, a:hover, a:visited {
   z-index: 100;
 }
 .centered {
-  width: 50vw;
+  width: 60vw;
   margin: 0 auto;
 }
 .lefty {
@@ -59,7 +59,7 @@ a, a:hover, a:visited {
 }
 
 .step div {
-  padding:  25px 50px;
+  padding:  35px 80px;
   line-height: 25px;
   font-size: 13px;
 }

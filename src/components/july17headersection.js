@@ -11,7 +11,7 @@ const July17HeaderSection = ({config}) => (
     query={
       graphql`
         query July17HeaderQuery {
-          header: file(relativePath: { eq: "header.jpg" }) {
+          header: file(relativePath: { eq: "july_17_header.jpg" }) {
             childImageSharp {
               fluid(maxWidth: 2000) {
                 ...GatsbyImageSharpFluid

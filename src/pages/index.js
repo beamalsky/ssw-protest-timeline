@@ -232,7 +232,12 @@ export default IndexPage
 
 export const query = graphql`
   query ConfigQuery {
-    allAirtable(sort: {fields: data___id, order: ASC}) {
+    allAirtable(
+      sort: {fields: data___id, order: ASC},
+      filter: {
+        table: { eq: "(DON'T TOUCH) May 30th website" }
+      }
+    ) {
       nodes {
         data {
           id

@@ -45,6 +45,15 @@ module.exports = {
               'image' : 'fileNode',
               'description': 'text/markdown'
             }
+          },
+          {
+            baseId: `${process.env.GATSBY_BASE_ID}`,
+            tableName: '(DON\'T TOUCH) July 17th website',
+            mapping: {
+              'full_width_image' : 'fileNode',
+              'image' : 'fileNode',
+              'description': 'text/markdown'
+            }
           }
         ]
       }
