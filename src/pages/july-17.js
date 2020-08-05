@@ -71,9 +71,22 @@ function Chapter({id, theme, full_width_image, title, image, description, media_
       )
     } else {
       return (
-        <div id="features" className={alignments[config.alignment]}>
-          <div id={id} className={classList}>
-              <div className={theme}>
+        <div
+          id="features"
+          className={alignments[config.alignment]}
+          style={{
+            paddingTop: '4vh',
+            paddingBottom: '4vh'
+        }}>
+          <div
+            id={id}
+            className={classList}
+            style={{
+              paddingTop: '17vh',
+              paddingBottom: '17vh',
+              opacity: 1
+          }}>
+              <div className={theme} style={{padding:  '35px 80px'}}>
                     { image &&
                       <Img
                         fluid={image.localFiles[0].childImageSharp.fluid}
