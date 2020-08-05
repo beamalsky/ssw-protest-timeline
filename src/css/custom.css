@@ -25,8 +25,8 @@ a, a:hover, a:visited {
   font-size: 13px;
 }
 #features {
-  padding-top: 10vh;
-  padding-bottom: 10vh;
+  padding-top: 4vh;
+  padding-bottom: 4vh;
   z-index: 100;
 }
 .centered {
@@ -50,12 +50,12 @@ a, a:hover, a:visited {
   background-color: #444;
 }
 .step {
-  padding-top: 20vh;
-  padding-bottom: 20vh;
+  padding-top: 17vh;
+  padding-bottom: 17vh;
   opacity: 1;
 }
 .step.active {
-  opacity: 0.9;
+  opacity: 1;
 }
 
 .step div {

@@ -3,17 +3,17 @@ import { StaticQuery, graphql } from "gatsby"
 import { Col, Row } from 'react-bootstrap'
 import Img from "gatsby-image"
 
-import Hero from '../components/hero'
-import SSWNameplateWhite from '../components/sswnameplatewhite'
+import July17Hero from '../components/july17hero'
+import SSWNameplateSmall from '../components/sswnameplatesmall'
 
 const July17HeaderSection = ({config}) => (
   <StaticQuery
     query={
       graphql`
         query July17HeaderQuery {
-          header: file(relativePath: { eq: "july_17_header.jpg" }) {
+          header: file(relativePath: { eq: "july-17-header.png" }) {
             childImageSharp {
-              fluid(maxWidth: 2000) {
+              fluid(maxWidth: 1000) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -30,23 +30,33 @@ const July17HeaderSection = ({config}) => (
     }
     render={data => (
       <>
-        <Hero
-          fluid={data.header.childImageSharp.fluid}
-        >
-          <div style={{
-            margin: '33vh auto',
-            width: '66vw',
-            padding: '4vh',
-            textAlign: 'center',
-            backgroundColor: 'black'
-          }}>
-              <SSWNameplateWhite />
-              <h1 style={{color: 'white'}}>{config.title}</h1>
-              <h3 className="dek">{config.subtitle}</h3>
-              <p className='byline'>By Martha Bayne, Jim Daley, and Jason Schumer<br />Web interactive by Bea Malsky</p>
-              <p className='subbyline'>Cover photos by TK</p>
-          </div>
-        </Hero>
+        <Row>
+          <Col xs={12} md={6}>
+            <July17Hero
+              fluid={data.header.childImageSharp.fluid}
+            />
+          </Col>
+          <Col xs={12} md={6}>
+            <div
+              style={{
+              padding: '4.25rem',
+              textAlign: 'center',
+              backgroundColor: 'white'
+            }}
+            class="main-text-column">
+                <SSWNameplateSmall/>
+                <h1
+                  style={{color: 'black', fontSize: '3.5rem'}}
+                >
+                    {config.title}
+                </h1>
+                <h3 className="dek">{config.subtitle}</h3>
+                <p className='byline'>By Martha Bayne, Jim Daley, and Jason Schumer<br />Web interactive by Bea Malsky</p>
+                <p className='subbyline'>Cover photo by Mateo Zapata</p>
+            </div>
+          </Col>
+        </Row>
+
         <div id="intro" style={{
           backgroundColor: 'white',
           padding: '2rem',
