@@ -31,19 +31,19 @@ const July17HeaderSection = ({config}) => (
     render={data => (
       <>
         <Row>
-          <Col xs={12} md={6}>
+          <Col xs={12} md={6} style={{padding: 0}}>
             <July17Hero
               fluid={data.header.childImageSharp.fluid}
             />
           </Col>
-          <Col xs={12} md={6}>
+          <Col xs={12} md={6} style={{padding: 0}}>
             <div
               style={{
               padding: '4.25rem',
               textAlign: 'center',
               backgroundColor: 'white'
             }}
-            class="main-text-column">
+            className="main-text-column">
                 <SSWNameplateSmall/>
                 <h1
                   style={{color: 'black', fontSize: '3.5rem'}}

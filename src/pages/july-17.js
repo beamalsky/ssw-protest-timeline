@@ -15,7 +15,8 @@ const config = {
     theme: 'light',
     alignment: 'center',
     title: 'What Happened July 17?',
-    subtitle: 'A document of the conflict in Grant Park'
+    subtitle: 'A document of the conflict in Grant Park',
+    image: 'july-17-card.png'
 }
 
 const alignments = {
@@ -140,7 +141,11 @@ const IndexPage = ({data}) => {
 
   return (
     <>
-      <SEO title={config.title} />
+      <SEO
+        title={config.title}
+        description={config.subtitle}
+        image={config.image}
+      />
       <Index {...config}/>
     </>
   )
