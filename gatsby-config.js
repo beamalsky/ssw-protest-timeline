@@ -5,7 +5,7 @@ module.exports = {
     title: `What Happened on May 30?`,
     description: `A document of escalating conflict in downtown Chicago`,
     twitterUsername: `@southsideweekly`,
-    url: "https://ssw-protest-timeline.netlify.app/", // No trailing slash allowed!
+    url: "https://protesttimeline.southsideweekly.com", // No trailing slash allowed!
     image: "/card.png"
   },
   plugins: [
