@@ -16,7 +16,7 @@ const config = {
     alignment: 'center',
     title: 'What Happened July 17?',
     subtitle: 'A document of the conflict in Grant Park',
-    image: 'july-17-card.png'
+    image: 'july-17-card.jpg'
 }
 
 const alignments = {
