@@ -32,7 +32,7 @@ const July17HeaderSection = ({config}) => (
             <div
               style={{
               padding: '4.25rem',
-              textAlign: 'center',
+              textAlign: 'left',
               backgroundColor: 'white'
             }}
             className="main-text-column">
@@ -43,8 +43,8 @@ const July17HeaderSection = ({config}) => (
                     {config.title}
                 </h1>
                 <h3 className="dek">{config.subtitle}</h3>
-                <p className='byline'>By Martha Bayne, Jim Daley, and Jason Schumer<br />Web interactive by Bea Malsky</p>
-                <p className='subbyline'>Cover photo by Mateo Zapata</p>
+                <p className='byline' style={{color: '#696969'}}>By Martha Bayne, Jim Daley, and Jason Schumer<br />Web interactive by Bea Malsky</p>
+                <p className='subbyline' style={{color: '#696969'}}>Cover photo by Mateo Zapata</p>
             </div>
           </Col>
         </Row>

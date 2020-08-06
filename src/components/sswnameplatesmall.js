@@ -30,7 +30,7 @@ const SSWNameplateSmall = () => {
     <a href="https://southsideweekly.com/">
       <Img fluid={data.placeholderImage.childImageSharp.fluid}
         style={{
-          margin: '0 auto',
+          margin: '0',
           width: '10rem',
           marginBottom: '0.5rem'
         }}

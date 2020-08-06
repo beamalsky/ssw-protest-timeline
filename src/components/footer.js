@@ -8,7 +8,7 @@ const Footer = () => {
     <div id="story">
       <div id="footer" className="light">
         <Row>
-          <Col className="main-text-column" xs={12} md={7} style={{padding: '0 2.5rem'}}>
+          <Col className="main-text-column" xs={12} md={7} style={{padding: '1rem 2.5rem'}}>
             <p class="footer">
               This project is part of an ongoing effort to collect stories, videos, and photographs from the George Floyd protests in Chicago. If you have information you would like to share with us, please visit <a href="https://southsideweekly.com/george-floyd-protests/">this website</a>.
             </p>

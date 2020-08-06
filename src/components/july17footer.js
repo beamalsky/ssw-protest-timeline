@@ -8,7 +8,10 @@ const Footer = () => {
     <div id="story">
       <div id="footer" className="light">
         <Row>
-          <Col className="main-text-column" xs={12} md={7} style={{padding: '0 2.5rem'}}>
+          <Col className="main-text-column" xs={12} md={7} style={{padding: '1rem 2.5rem'}}>
+            <p className="footer">
+              Read part one of this series:<br /> <a href="http://protesttimeline.southsideweekly.com/">What Happened on May 30?</a>
+            </p>
             <p className="footer">
               <b>Martha Bayne</b> is managing editor of the Weekly. She last wrote about the timeline of and police response to the May 30 George Floyd protests. <b>Jim Daley</b> is the Weekly’s politics editor. He last wrote about <a href="https://southsideweekly.com/census-spotlight-chicago-cares/">Census outreach</a>. <b>Jason Schumer</b> is the Weekly’s managing director.
             </p>
