@@ -5,9 +5,8 @@ import Img from "gatsby-image"
 
 import Hero from '../components/hero'
 import SSWNameplateWhite from '../components/sswnameplatewhite'
-import config from '../components/config.js'
 
-const HeaderSection = () => (
+const HeaderSection = ({config}) => (
   <StaticQuery
     query={
       graphql`

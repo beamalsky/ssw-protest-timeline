@@ -33,7 +33,7 @@ Built using Mapbox's [Storytelling template](https://github.com/mapbox/storytell
 3. Start:
 
     ```shell
-    yarn start
+    yarn develop
     ```
 
     Your site should now be up and running at `http://localhost:8000`!

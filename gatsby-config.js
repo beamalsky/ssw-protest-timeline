@@ -5,7 +5,7 @@ module.exports = {
     title: `What Happened on May 30?`,
     description: `A document of escalating conflict in downtown Chicago`,
     twitterUsername: `@southsideweekly`,
-    url: "https://ssw-protest-timeline.netlify.app/", // No trailing slash allowed!
+    url: "https://protesttimeline.southsideweekly.com", // No trailing slash allowed!
     image: "/card.png"
   },
   plugins: [
@@ -40,6 +40,15 @@ module.exports = {
           {
             baseId: `${process.env.GATSBY_BASE_ID}`,
             tableName: '(DON\'T TOUCH) May 30th website',
+            mapping: {
+              'full_width_image' : 'fileNode',
+              'image' : 'fileNode',
+              'description': 'text/markdown'
+            }
+          },
+          {
+            baseId: `${process.env.GATSBY_BASE_ID}`,
+            tableName: '(DON\'T TOUCH) July 17th website',
             mapping: {
               'full_width_image' : 'fileNode',
               'image' : 'fileNode',
