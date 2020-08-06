@@ -61,7 +61,7 @@ class Index extends Component {
     }
 }
 
-function Chapter({id, theme, full_width_image, title, image, description, media_embed, currentChapterID}) {
+function Chapter({id, theme, full_width_image, title, image, description, media_embed, timestamp, currentChapterID}) {
     const classList = id === currentChapterID ? "step active" : "step";
     if (full_width_image) {
       return (
@@ -87,12 +87,15 @@ function Chapter({id, theme, full_width_image, title, image, description, media_
               opacity: 1
           }}>
               <div className={theme} style={{padding: '35px 40px'}}>
-                    { image &&
-                      <Img
-                        fluid={image.localFiles[0].childImageSharp.fluid}
-                        className="mb-5"
-                      />
-                    }
+                  { image &&
+                    <Img
+                      fluid={image.localFiles[0].childImageSharp.fluid}
+                      className="mb-5"
+                    />
+                  }
+                  { timestamp &&
+                    <p className='byline'>{timestamp}</p>
+                  }
                   { title &&
                       <h3 className="dek mt-3 mb-3">{title}</h3>
                   }
@@ -129,7 +132,8 @@ const IndexPage = ({data}) => {
       'title': record.data.title,
       'image': record.data.image,
       'description': record.data.description ? record.data.description.childMarkdownRemark.html : null,
-      'media_embed': record.data.media_embed
+      'media_embed': record.data.media_embed,
+      'timestamp': record.data.timestamp
     }
     config.chapters.push(chapter)
   })
@@ -202,6 +206,7 @@ export const query = graphql`
             }
           }
           media_embed
+          timestamp
         }
       }
     }
