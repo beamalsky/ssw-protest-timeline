@@ -1,7 +1,6 @@
 import React from 'react'
 import { StaticQuery, graphql } from "gatsby"
 import { Col, Row } from 'react-bootstrap'
-import Img from "gatsby-image"
 
 import July17Hero from '../components/july17hero'
 import SSWNameplateSmall from '../components/sswnameplatesmall'
@@ -14,13 +13,6 @@ const July17HeaderSection = ({config}) => (
           header: file(relativePath: { eq: "july-17-header.png" }) {
             childImageSharp {
               fluid(maxWidth: 1000) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-          blm: file(relativePath: { eq: "teddy_waffles_blm.jpg" }) {
-            childImageSharp {
-              fluid(maxWidth: 500) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -46,7 +38,7 @@ const July17HeaderSection = ({config}) => (
             className="main-text-column">
                 <SSWNameplateSmall/>
                 <h1
-                  style={{color: 'black', fontSize: '3.5rem'}}
+                  style={{color: 'black', fontSize: '3.7rem'}}
                 >
                     {config.title}
                 </h1>
