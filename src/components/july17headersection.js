@@ -43,7 +43,7 @@ const July17HeaderSection = ({config}) => (
                     {config.title}
                 </h1>
                 <h3 className="dek">{config.subtitle}</h3>
-                <p className='byline' style={{color: '#696969'}}>By Martha Bayne, Jim Daley, and Jason Schumer<br />Web interactive by Bea Malsky</p>
+                <p className='byline' style={{color: '#696969'}}>By Jim Daley, Martha Bayne, and Jason Schumer<br />Web interactive by Bea Malsky</p>
                 <p className='subbyline' style={{color: '#696969'}}>Cover photo by Mateo Zapata</p>
             </div>
           </Col>

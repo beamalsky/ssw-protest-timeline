@@ -13,7 +13,7 @@ const Footer = () => {
               Read part one of this series:<br /> <a href="http://protesttimeline.southsideweekly.com/">What Happened on May 30?</a>
             </p>
             <p className="footer">
-              <b>Martha Bayne</b> is managing editor of the Weekly. She last wrote about the timeline of and police response to the May 30 George Floyd protests. <b>Jim Daley</b> is the Weekly’s politics editor. He last wrote about <a href="https://southsideweekly.com/census-spotlight-chicago-cares/">Census outreach</a>. <b>Jason Schumer</b> is the Weekly’s managing director.
+              <b>Jim Daley</b> is the Weekly’s politics editor. <b>Martha Bayne</b> is managing editor of the Weekly. She last wrote about the timeline of and police response to the May 30 George Floyd protests. He last wrote about <a href="https://southsideweekly.com/census-spotlight-chicago-cares/">Census outreach</a>. <b>Jason Schumer</b> is the Weekly’s managing director.
             </p>
             <p className="footer">
               This project is part of an ongoing effort to collect stories, videos, and photographs from the George Floyd protests in Chicago. If you have information you would like to share with us, please visit <a href="https://southsideweekly.com/george-floyd-protests/">this website</a>.
