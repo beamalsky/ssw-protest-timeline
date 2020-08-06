@@ -86,7 +86,7 @@ function Chapter({id, theme, full_width_image, title, image, description, media_
               paddingBottom: '17vh',
               opacity: 1
           }}>
-              <div className={theme} style={{padding:  '35px 80px'}}>
+              <div className={theme} style={{padding: '35px 40px'}}>
                     { image &&
                       <Img
                         fluid={image.localFiles[0].childImageSharp.fluid}
