@@ -94,7 +94,7 @@ function Chapter({id, theme, full_width_image, title, image, description, media_
                     />
                   }
                   { timestamp &&
-                    <p className='byline'>{timestamp}</p>
+                    <p className='byline'><b>{timestamp}</b></p>
                   }
                   { title &&
                       <h3 className="dek mt-3 mb-3">{title}</h3>
