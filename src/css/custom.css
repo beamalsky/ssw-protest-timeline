@@ -679,6 +679,9 @@ pre tt:after {
   h1 {
     font-size: 2.2rem !important;
   }
+  .twitter-tweet {
+    padding: 0rem !important;
+  }
 }
 button {
   display: inline-block;
