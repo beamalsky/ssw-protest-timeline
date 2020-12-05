@@ -5,7 +5,8 @@ import Img from "gatsby-image"
 
 import SEO from '../components/seo'
 import July17HeaderSection from '../components/july17headersection'
-import July17Footer from '../components/july17footer'
+import SSWNameplate from '../components/sswnameplate'
+import Footer from '../components/footer'
 import '../css/typekit.css'
 import '../css/custom.css'
 
@@ -56,7 +57,50 @@ class Index extends Component {
                 )
               }
           </div>
-          <July17Footer />
+          <Footer>
+            <p className="footer">
+              Read part one of this series:<br /> <a href="http://protesttimeline.southsideweekly.com/">What Happened on May 30?</a>
+            </p>
+            <p className="footer">
+              <i><b>Jim Daley</b> is the Weekly’s politics editor. <b>Martha Bayne</b> is the Weekly's managing editor. <b>Jason Schumer</b> is the Weekly’s managing director. <b>Bea Malsky</b> is a lead developer at DataMade and a former editor-in-chief of the Weekly.</i>
+            </p>
+            <p className="footer">
+              This project is part of an ongoing effort to collect stories, video, and photographs documenting moments of conflict between anti-racism protesters and Chicago police. If you have information you would like to share with us, please visit <a href="https://southsideweekly.com/george-floyd-protests/">this website</a>.
+            </p>
+            <p class="footer">
+              Additional reporting:
+            </p>
+            <p class="footer" style={{ textAlign: 'left'}}>
+              <a href="https://southsideweekly.com/videos-show-aggressive-police-response-may-30-protest/">
+                An analysis by the Invisible Institute finds multiple likely violations of CPD’s new use of force policy.
+              </a>
+            </p>
+            <p class="footer" style={{ textAlign: 'left' }}>
+              <a href="https://southsideweekly.com/city-cited-chicago-freedom-school-feeding-protesters/">
+                The Chicago Freedom School opened its doors to people who were trapped in the Loop after George Floyd protests and ordered pizza. Then police showed up.
+              </a>
+            </p>
+            <p class="footer" style={{ textAlign: 'left' }}>
+              <a href="https://southsideweekly.com/fact-checking-david-brown-august-15/">
+                How accurate were the CPD superintendent’s assertions about the downtown protest?
+              </a>
+            </p>
+            <p class="footer" style={{ textAlign: 'left' }}>
+              <a href="https://southsideweekly.com/prosecuting-protesters-sa-candidates-differ-on-foxxs-progressive-approach/">
+              Kim Foxx is dismissing certain misdemeanor charges against protesters and prosecuting those charged with felonies. Her opponent says Foxx is allowing crime to “intermix” with peaceful protesters.
+              </a>
+            </p>
+            <p class="footer" style={{ textAlign: 'left' }}>
+              <a href="https://southsideweekly.com/prosecuting-protesters-sa-candidates-differ-on-foxxs-progressive-approach/">
+                Chicago police met Mexican feminist solidarity protesters with force, felony charges, and exactly what they were demonstrating against—male violence
+              </a>
+            </p>
+            <br />
+            <SSWNameplate />
+            <p className="footer">
+              <em><a href="https://southsideweekly.com/donate/">Donate today</a> to support South Side Weekly’s community-focused reporting</em>
+            </p>
+          </Footer>
         </div>
       )
     }
